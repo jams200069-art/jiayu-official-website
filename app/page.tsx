@@ -16,8 +16,8 @@ export default function Home() {
   const sendEmail = async () => {
     try {
      await emailjs.send(
-  "你的 service_r3qcsr8",
-  "你的template_eq0m5kt",
+  "service_r3qcsr8",
+  "template_eq0m5kt",
   {
     from_name: form.from_name,
     phone: form.phone,
