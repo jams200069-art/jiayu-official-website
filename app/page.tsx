@@ -15,12 +15,17 @@ export default function Home() {
 
   const sendEmail = async () => {
     try {
-      await emailjs.send(
-        "service_r3qcsr8",
-        "ssf7jek",
-        form,
-        "gz8eA8pb1vpUT62y3"
-      );
+     await emailjs.send(
+  "你的 service_r3qcsr8",
+  "你的template_eq0m5kt",
+  {
+    from_name: form.from_name,
+    phone: form.phone,
+    service: form.service,
+    message: form.message,
+  },
+  "gz8eA8pb1vpUT62y3"
+);
 
       alert("詢價已送出！");
     } catch (error) {
