@@ -123,10 +123,13 @@ export default function Home() {
           </p>
 
           <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
-            防水隔熱專業施工
-            <br />
-            細緻工法長效防護
-          </h1>
+  <span className="text-cyan-300">防水</span>
+  ・
+  <span className="text-rose-300">隔熱</span>
+  專業施工
+  <br />
+  細緻工法・長效防護
+</h1>
 
           <p className="text-xl text-gray-300 leading-relaxed mb-10">
             專營屋頂防水、外牆防水、浴室漏水、
