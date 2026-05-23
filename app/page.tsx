@@ -214,7 +214,7 @@ export default function Home() {
   {[
     {
       title: "屋頂防水",
-      desc: "採用高彈性防水材料配合玻璃纖維毯（FRP）防水具有超強抗拉強度、耐候性極佳、防腐抗裂、抗植物根系穿透四大核心優勢。它能與防水塗料緊密結合，形成一體化的高強度屏障，是現代屋頂、地下室、水池等工程的理想防水材料，防止龜裂滲水，延長建築壽命。。"
+      desc: "採用高彈性防水材料配合玻璃纖維毯（FRP）具有超強抗拉強度、耐候性極佳、防腐抗裂、抗植物根系穿透四大核心優勢。它能與防水塗料緊密結合，形成一體化的高強度屏障，是現代屋頂、地下室、水池等工程的理想防水材料，防止龜裂滲水，延長建築壽命。"
     },
 
     {
@@ -278,13 +278,13 @@ export default function Home() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="border border-white/10 rounded-[30px] p-10"
+                className="border border-white/10 rounded-[20px] p-5 md:p-10 min-h-[160px] md:min-h-[300px]"
               >
-                <p className="text-[#D4B06A] text-5xl font-black mb-6">
+                <p className="text-[#D4B06A] text-3xl md:text-5xl font-black mb-4">
                   0{index + 1}
                 </p>
 
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-lg md:text-2xl font-bold">
                   {step}
                 </h3>
               </div>
