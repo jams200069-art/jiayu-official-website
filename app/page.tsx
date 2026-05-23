@@ -161,29 +161,45 @@ export default function Home() {
   <div className="flex flex-col px-6 py-6 gap-5 text-lg font-medium">
 
     <a
-      href="#about"
-      className="hover:text-[#D4B06A]"
-    >
-      關於我們
-    </a>
+  href="#about"
+  className="hover:text-[#D4B06A]"
+  onClick={() => {
+    const menu = document.getElementById("mobile-menu")
+    menu?.classList.add("hidden")
+  }}
+>
+  關於我們
+</a>
 
     <a
       href="#services"
       className="hover:text-[#D4B06A]"
+      onClick={() => {
+        const menu = document.getElementById("mobile-menu")
+        menu?.classList.add("hidden")
+      }}
     >
       服務項目
     </a>
 
     <a
-      href="#cases"
-      className="hover:text-[#D4B06A]"
-    >
-      施工案例
-    </a>
+  href="#cases"
+  className="hover:text-[#D4B06A]"
+  onClick={() => {
+    const menu = document.getElementById("mobile-menu")
+    menu?.classList.add("hidden")
+  }}
+>
+  施工案例
+</a>
 
     <a
       href="#contact"
       className="hover:text-[#D4B06A]"
+      onClick={() => {
+        const menu = document.getElementById("mobile-menu")
+        menu?.classList.add("hidden")
+      }}
     >
       聯絡我們
     </a>
