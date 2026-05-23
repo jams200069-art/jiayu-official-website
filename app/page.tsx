@@ -119,7 +119,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-5">
 
             <a
-              href="#contact"
+              href="/"
               className="px-10 py-4 rounded-full bg-[#D4B06A] text-black font-bold hover:scale-105 duration-300"
             >
               免費詢價
