@@ -553,7 +553,7 @@ export default function Home() {
         <a
           href="https://facebook.com"
           target="_blank"
-          className="px-5 py-3 md:px-8 md:py-4 rounded-full"
+          className="px-5 py-3 md:px-8 md:py-4 rounded-full bg-[#1877F2]/70 backdrop-blur-md text-white text-sm md:text-lg font-bold shadow-2xl"
         >
           FB 施工案例
         </a>
@@ -561,7 +561,7 @@ export default function Home() {
         <a
           href="https://line.me"
           target="_blank"
-          className="px-5 py-3 md:px-8 md:py-4 rounded-full"
+          className="px-5 py-3 md:px-8 md:py-4 rounded-full bg-[#06C755]/70 backdrop-blur-md text-white text-sm md:text-lg font-bold shadow-2xl"
         >
           LINE 免費詢價
         </a>
