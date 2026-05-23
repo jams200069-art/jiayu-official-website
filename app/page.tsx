@@ -71,7 +71,25 @@ export default function Home() {
               專業防水・隔熱工程
             </p>
           </div>
+<div className="hidden md:flex gap-8 text-sm">
 
+  <a href="#about" className="hover:text-[#D4B06A]">
+    關於我們
+  </a>
+
+  <a href="#services" className="hover:text-[#D4B06A]">
+    服務項目
+  </a>
+
+  <a href="#cases" className="hover:text-[#D4B06A]">
+    施工案例
+  </a>
+
+  <a href="#contact" className="hover:text-[#D4B06A]">
+    聯絡我們
+  </a>
+
+</div>
           <div className="text-right">
             <p className="text-2xl font-bold text-[#D4B06A]">
               0968-305-061
@@ -137,9 +155,9 @@ export default function Home() {
 
       {/* ABOUT */}
       <section
-        id="about"
-        className="py-28 bg-[#111111]"
-      >
+  id="about"
+  className="py-28 bg-[#111111]"
+>
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
           <div>
@@ -173,7 +191,10 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-28 bg-black">
+      <section
+  id="services"
+  className="py-28 bg-black"
+>
 
         <div className="max-w-7xl mx-auto px-6">
 
@@ -391,7 +412,10 @@ export default function Home() {
         </div>
       </section>
 {/*施工案例*/}
-<section className="py-28 bg-[#0a0a0a]">
+<section
+  id="cases"
+  className="py-28 bg-black"
+>
   <div className="max-w-7xl mx-auto px-6">
 
     <p className="text-[#D4B06A] tracking-[4px] mb-4">
