@@ -2,327 +2,534 @@
 
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import Image from "next/image";
 
 export default function Home() {
-  const [size, setSize] = useState(10);
-
   const [form, setForm] = useState({
     from_name: "",
     phone: "",
     service: "",
     message: "",
+    size: 20,
   });
+
+  const calculatePrice = () => {
+    if (form.service === "防水") {
+      return form.size * 2500;
+    }
+
+    if (form.service === "隔熱") {
+      return form.size * 2000;
+    }
+
+    if (form.service === "防水+隔熱") {
+      return form.size * 3500;
+    }
+
+    if (form.service === "浴室漏水") {
+      return "5000 / 間";
+    }
+
+    return 0;
+  };
 
   const sendEmail = async () => {
     try {
-     await emailjs.send(
-  "service_r3qcsr8",
-  "template_eq0m5kt",
-  {
-    from_name: form.from_name,
-    phone: form.phone,
-    service: form.service,
-    message: form.message,
-  },
-  "gz8eA8pb1vpUT62y3"
-);
+      await emailjs.send(
+        "service_r3qcsr8",
+        "template_eq0m5kt",
+        {
+          from_name: form.from_name,
+          phone: form.phone,
+          service: form.service,
+          message: form.message,
+          size: form.size,
+        },
+        "gz8eA8pb1vpUT62y3"
+      );
 
-      alert("詢價已送出！");
+      alert("詢價已成功送出！");
     } catch (error) {
-      alert("送出失敗");
       console.log(error);
+      alert("送出失敗");
     }
   };
 
   return (
-    <main className="min-h-screen bg-white text-gray-800">
-      {/* Navbar */}
-      <header className="w-full border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <main className="bg-[#0B0B0B] text-white overflow-hidden">
+
+      {/* NAVBAR */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
           <div>
-            <h1 className="text-2xl font-bold text-slate-700">
+            <h1 className="text-2xl font-bold tracking-widest">
               佳禹實業有限公司
             </h1>
 
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-400 mt-1">
               專業防水・隔熱工程
             </p>
           </div>
 
-          <nav className="hidden md:flex gap-8 text-sm font-medium">
-            <a href="#" className="hover:text-blue-600">
-              首頁
-            </a>
-
-            <a href="#about" className="hover:text-blue-600">
-              關於我們
-            </a>
-
-            <a href="#services" className="hover:text-blue-600">
-              服務項目
-            </a>
-
-            <a href="#contact" className="hover:text-blue-600">
-              聯絡我們
-            </a>
-          </nav>
-
           <div className="text-right">
-            <p className="font-bold text-slate-700">
+            <p className="text-2xl font-bold text-[#D4B06A]">
               0968-305-061
             </p>
 
-            <p className="text-xs text-gray-500">
+            <p className="text-sm text-gray-400">
               免費諮詢專線
             </p>
           </div>
         </div>
-      </header>
+      </nav>
 
-      {/* Hero */}
-      <section className="bg-slate-100 py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-6 text-slate-800">
-            專業防水工程
-          </h2>
+      {/* HERO */}
+      <section className="relative h-screen flex items-center justify-center">
 
-          <p className="text-xl text-gray-600 mb-10">
-            屋頂防水・外牆防水・地下室止水・抓漏工程
+        <div className="absolute inset-0">
+          <Image
+            src="/villa.jpg"
+            alt="villa"
+            fill
+            className="object-cover brightness-[0.35]"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black"></div>
+
+        <div className="relative z-10 text-center px-6 max-w-5xl">
+
+          <p className="tracking-[6px] text-[#D4B06A] mb-5">
+            WATERPROOF ENGINEERING
           </p>
 
-          <a
-            href="#contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl text-lg"
-          >
-            免費估價
-          </a>
+          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+            日系精品工程美學
+            <br />
+            高端防水隔熱施工
+          </h1>
+
+          <p className="text-xl text-gray-300 leading-relaxed mb-10">
+            專營屋頂防水、外牆防水、浴室漏水、
+            隔熱工程與抓漏施工，
+            以精品級工法打造高品質住宅防護。
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-5">
+
+            <a
+              href="#contact"
+              className="px-10 py-4 rounded-full bg-[#D4B06A] text-black font-bold hover:scale-105 duration-300"
+            >
+              免費詢價
+            </a>
+
+            <a
+              href="#cases"
+              className="px-10 py-4 rounded-full border border-white/20 hover:bg-white/10 duration-300"
+            >
+              施工案例
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* About */}
+      {/* ABOUT */}
       <section
         id="about"
-        className="max-w-5xl mx-auto px-6 py-20"
+        className="py-28 bg-[#111111]"
       >
-        <h2 className="text-3xl font-bold mb-8 text-slate-800">
-          關於我們
-        </h2>
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
-        <p className="text-gray-600 leading-8 text-lg">
-          佳禹實業有限公司專營各式防水工程、
-          抓漏工程與隔熱施工，
-          擁有多年施工經驗，
-          提供專業評估與現場施工服務。
-        </p>
+          <div>
+            <p className="text-[#D4B06A] tracking-[4px] mb-4">
+              ABOUT US
+            </p>
+
+            <h2 className="text-5xl font-bold mb-8">
+              關於我們
+            </h2>
+
+            <p className="text-gray-300 leading-loose text-lg">
+              佳禹實業有限公司專營各式防水、
+              隔熱、抓漏與屋頂工程，
+              擁有多年施工經驗與專業團隊，
+              以高規格材料與精緻工法，
+              提供住宅、透天別墅與商業空間
+              最完善的工程品質。
+            </p>
+          </div>
+
+          <div className="relative h-[500px] rounded-[40px] overflow-hidden border border-[#D4B06A]/20">
+            <Image
+              src="/work1.jpg"
+              alt="work"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
       </section>
 
-      {/* Services */}
-      <section
-        id="services"
-        className="bg-gray-50 py-20 px-6"
-      >
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-slate-800">
+      {/* SERVICES */}
+      <section className="py-28 bg-black">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <p className="text-[#D4B06A] tracking-[4px] mb-4">
+            SERVICES
+          </p>
+
+          <h2 className="text-5xl font-bold mb-16">
             服務項目
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold mb-4">
-                屋頂防水
-              </h3>
+          <div className="grid md:grid-cols-4 gap-8">
 
-              <p className="text-gray-600">
-                PU防水、彈泥防水、隔熱工程
-              </p>
-            </div>
+            {[
+              "屋頂防水",
+              "外牆防水",
+              "浴室漏水",
+              "隔熱工程",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-[#111111] border border-white/10 rounded-[30px] p-10 hover:border-[#D4B06A] duration-300"
+              >
+                <h3 className="text-2xl font-bold mb-5">
+                  {item}
+                </h3>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold mb-4">
-                外牆防水
-              </h3>
-
-              <p className="text-gray-600">
-                外牆滲水修復、高壓灌注
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold mb-4">
-                地下室止水
-              </h3>
-
-              <p className="text-gray-600">
-                依現場現況專業評估施工
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold mb-4">
-                抓漏工程
-              </h3>
-
-              <p className="text-gray-600">
-                精準檢測漏水來源
-              </p>
-            </div>
+                <p className="text-gray-400 leading-loose">
+                  高品質材料搭配專業工法，
+                  提供長效耐用施工品質。
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 價格試算 */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold mb-8 text-slate-800">
-          防水工程價格試算
-        </h2>
+      {/* PROCESS */}
+      <section className="py-28 bg-[#111111]">
 
-        <div className="bg-white border rounded-2xl p-8 shadow-sm">
-          <label className="block mb-4 font-bold">
-            施工坪數
-          </label>
+        <div className="max-w-7xl mx-auto px-6">
 
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value={size}
-            onChange={(e) =>
-              setSize(Number(e.target.value))
-            }
-            className="w-full mb-6"
-          />
-
-          <div className="text-xl mb-4">
-            目前坪數：
-            <span className="font-bold text-blue-600">
-              {size} 坪
-            </span>
-          </div>
-
-          <div className="text-3xl font-bold text-green-600">
-            預估價格：
-            NT$ {size * 3500}
-          </div>
-
-          <p className="text-sm text-gray-500 mt-4">
-            * 實際價格依現場狀況報價
+          <p className="text-[#D4B06A] tracking-[4px] mb-4">
+            PROCESS
           </p>
+
+          <h2 className="text-5xl font-bold mb-16">
+            施工流程
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8">
+
+            {[
+              "現場勘查",
+              "問題分析",
+              "專業施工",
+              "完工驗收",
+            ].map((step, index) => (
+              <div
+                key={index}
+                className="border border-white/10 rounded-[30px] p-10"
+              >
+                <p className="text-[#D4B06A] text-5xl font-black mb-6">
+                  0{index + 1}
+                </p>
+
+                <h3 className="text-2xl font-bold">
+                  {step}
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Contact */}
+      {/* CASES */}
+      <section
+        id="cases"
+        className="py-28 bg-black"
+      >
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <p className="text-[#D4B06A] tracking-[4px] mb-4">
+            PROJECTS
+          </p>
+
+          <h2 className="text-5xl font-bold mb-16">
+            施工案例
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {[
+              "/case1.jpg",
+              "/case2.jpg",
+              "/case3.jpg",
+              "/case4.jpg",
+            ].map((img, index) => (
+              <div
+                key={index}
+                className="relative h-[350px] rounded-[30px] overflow-hidden group"
+              >
+                <Image
+                  src={img}
+                  alt="case"
+                  fill
+                  className="object-cover group-hover:scale-110 duration-700"
+                />
+
+                <div className="absolute inset-0 bg-black/30"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICE */}
+      <section className="py-28 bg-[#111111]">
+
+        <div className="max-w-5xl mx-auto px-6">
+
+          <p className="text-[#D4B06A] tracking-[4px] mb-4">
+            PRICE ESTIMATE
+          </p>
+
+          <h2 className="text-5xl font-bold mb-16">
+            工程價格試算
+          </h2>
+
+          <div className="bg-[#1A1A1A] border border-[#D4B06A]/20 rounded-[40px] p-10">
+
+            <select
+              value={form.service}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  service: e.target.value,
+                })
+              }
+              className="w-full bg-black border border-white/10 rounded-2xl p-5 mb-10"
+            >
+              <option value="">
+                請選擇施工項目
+              </option>
+
+              <option value="防水">
+                防水工程
+              </option>
+
+              <option value="隔熱">
+                隔熱工程
+              </option>
+
+              <option value="防水+隔熱">
+                防水＋隔熱
+              </option>
+
+              <option value="浴室漏水">
+                浴室漏水
+              </option>
+            </select>
+
+            {form.service !== "浴室漏水" &&
+              form.service !== "" && (
+                <>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value={form.size}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        size: Number(e.target.value),
+                      })
+                    }
+                    className="w-full"
+                  />
+
+                  <p className="text-2xl mt-8">
+                    施工坪數：
+                    <span className="text-[#D4B06A] font-bold">
+                      {form.size} 坪
+                    </span>
+                  </p>
+                </>
+              )}
+
+            <div className="mt-12 bg-black rounded-[30px] p-10 border border-white/10">
+
+              <h3 className="text-5xl font-black text-[#D4B06A]">
+                NT$ {calculatePrice()}
+              </h3>
+
+              <p className="text-gray-400 mt-5">
+                * 實際價格依現場狀況報價
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* REVIEWS */}
+      <section className="py-28 bg-black">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <p className="text-[#D4B06A] tracking-[4px] mb-4">
+            REVIEWS
+          </p>
+
+          <h2 className="text-5xl font-bold mb-16">
+            客戶評價
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {[
+              "施工非常細心，品質很好。",
+              "老闆專業度高，價格透明。",
+              "完工後效果非常滿意。",
+            ].map((review, index) => (
+              <div
+                key={index}
+                className="bg-[#111111] border border-white/10 rounded-[30px] p-10"
+              >
+                <p className="text-gray-300 leading-loose">
+                  {review}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-28 bg-[#111111]">
+
+        <div className="max-w-5xl mx-auto px-6">
+
+          <p className="text-[#D4B06A] tracking-[4px] mb-4">
+            FAQ
+          </p>
+
+          <h2 className="text-5xl font-bold mb-16">
+            常見問題
+          </h2>
+
+          <div className="space-y-6">
+
+            {[
+              "防水工程可以維持多久？",
+              "施工需要多久時間？",
+              "是否提供保固？",
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="border border-white/10 rounded-[25px] p-8"
+              >
+                <h3 className="text-xl font-bold">
+                  {faq}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
       <section
         id="contact"
-        className="bg-gray-50 py-20 px-6"
+        className="py-28 bg-black"
       >
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center text-slate-800">
+
+        <div className="max-w-4xl mx-auto px-6">
+
+          <p className="text-[#D4B06A] tracking-[4px] mb-4">
+            CONTACT
+          </p>
+
+          <h2 className="text-5xl font-bold mb-16">
             免費線上估價
           </h2>
 
-          <div className="bg-white rounded-2xl shadow-sm p-8">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block mb-2 font-semibold">
-                  姓名
-                </label>
+          <div className="bg-[#111111] border border-white/10 rounded-[40px] p-10">
 
-                <input
-                  type="text"
-                  placeholder="請輸入姓名"
-                  className="w-full border rounded-xl px-4 py-3"
-                  onChange={(e) =>
-                    setForm({
-                      ...form,
-                      from_name: e.target.value,
-                    })
-                  }
-                />
-              </div>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
 
-              <div>
-                <label className="block mb-2 font-semibold">
-                  聯絡電話
-                </label>
-
-                <input
-                  type="text"
-                  placeholder="0912-345-678"
-                  className="w-full border rounded-xl px-4 py-3"
-                  onChange={(e) =>
-                    setForm({
-                      ...form,
-                      phone: e.target.value,
-                    })
-                  }
-                />
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <label className="block mb-2 font-semibold">
-                工程項目
-              </label>
-
-              <select
-                className="w-full border rounded-xl px-4 py-3"
+              <input
+                type="text"
+                placeholder="姓名"
+                className="bg-black border border-white/10 rounded-2xl p-5"
                 onChange={(e) =>
                   setForm({
                     ...form,
-                    service: e.target.value,
+                    from_name: e.target.value,
                   })
                 }
-              >
-                <option>屋頂防水</option>
-                <option>外牆防水</option>
-                <option>地下室止水</option>
-                <option>抓漏工程</option>
-              </select>
-            </div>
+              />
 
-            <div className="mt-6">
-              <label className="block mb-2 font-semibold">
-                需求內容
-              </label>
-
-              <textarea
-                rows={5}
-                placeholder="請輸入需求"
-                className="w-full border rounded-xl px-4 py-3"
+              <input
+                type="text"
+                placeholder="聯絡電話"
+                className="bg-black border border-white/10 rounded-2xl p-5"
                 onChange={(e) =>
                   setForm({
                     ...form,
-                    message: e.target.value,
+                    phone: e.target.value,
                   })
                 }
               />
             </div>
 
+            <textarea
+              placeholder="需求內容"
+              rows={6}
+              className="w-full bg-black border border-white/10 rounded-2xl p-5 mb-8"
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  message: e.target.value,
+                })
+              }
+            ></textarea>
+
             <button
               onClick={sendEmail}
-              className="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl text-lg font-bold"
+              className="w-full py-5 rounded-full bg-[#D4B06A] text-black font-bold text-lg hover:scale-[1.02] duration-300"
             >
-              送出詢價
+              立即送出詢價
             </button>
           </div>
         </div>
       </section>
 
-      {/* LINE */}
-      <a
-        href="https://line.me/ti/p/@637zdsjd"
-        target="_blank"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-full shadow-lg"
-      >
-        LINE 免費詢價
-      </a>
-      <a
-  href="https://www.facebook.com/share/18hEyVqFkS/?mibextid=wwXIfr"
-  target="_blank"
-  className="fixed bottom-24 right-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-full shadow-lg"
->
-  FB 施工案例
-</a>
+      {/* FLOAT BUTTONS */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          className="px-8 py-4 rounded-full bg-[#1877F2] text-white font-bold shadow-2xl"
+        >
+          FB 施工案例
+        </a>
+
+        <a
+          href="https://line.me"
+          target="_blank"
+          className="px-8 py-4 rounded-full bg-[#06C755] text-white font-bold shadow-2xl"
+        >
+          LINE 免費詢價
+        </a>
+      </div>
+
     </main>
   );
 }
