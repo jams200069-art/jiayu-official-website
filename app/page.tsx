@@ -62,109 +62,137 @@ export default function Home() {
 >
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      {/* NAVBAR */}
+<nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
 
-          <div>
-            <a href="#top">
-  <h1 className="text-2xl font-bold tracking-widest cursor-pointer hover:text-[#D4B06A] transition duration-300">
-    佳禹
-  </h1>
-</a>
+  <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
 
-            <p className="text-sm text-gray-400 mt-1">
-              專業防水・隔熱工程
-            </p>
-          </div>
-{/* 電腦版導覽列 */}
-<div className="hidden md:flex gap-8 text-sm font-medium">
-  <a
-    href="#about"
-    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
-  >
-    關於我們
-  </a>
+    {/* 左側 Logo */}
+    <div>
+      <a href="#top">
+        <h1 className="text-2xl font-bold tracking-widest cursor-pointer transition duration-300 hover:text-[#D4B06A]">
+          佳禹實業有限公司
+        </h1>
+      </a>
 
-  <a
-    href="#services"
-    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
-  >
-    服務項目
-  </a>
+      <p className="text-sm text-gray-400 mt-1">
+        專業防水・隔熱工程
+      </p>
+    </div>
 
-  <a
-    href="#cases"
-    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
-  >
-    施工案例
-  </a>
+    {/* 電腦版導覽列 */}
+    <div className="hidden md:flex gap-8 text-sm font-medium">
 
-  <a
-    href="#contact"
-    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
-  >
-    聯絡我們
-  </a>
-</div>
+      <a
+        href="#about"
+        className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+      >
+        關於我們
+      </a>
 
-{/* 手機版漢堡選單 */}
-<div className="md:hidden">
-  <button
-    onClick={() => {
-      const menu = document.getElementById("mobile-menu")
-      menu?.classList.toggle("hidden")
-    }}
-    className="text-3xl"
-  >
-    ☰
-  </button>
-</div>
-          <div className="flex flex-col items-end gap-2">
+      <a
+        href="#services"
+        className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+      >
+        服務項目
+      </a>
 
-  <a
-    href="tel:0968305061"
-    className="border border-[#D4B06A] text-[#D4B06A] backdrop-blur-md bg-black/30 px-4 py-2 rounded-[12px] text-sm md:text-base font-bold hover:bg-[#D4B06A] hover:text-black transition duration-300 text-center w-[160px]"
-  >
-    📞 0968-305-061
-  </a>
+      <a
+        href="#cases"
+        className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+      >
+        施工案例
+      </a>
 
-  <a
-    href="tel:0930804172"
-    className="border border-[#D4B06A] text-[#D4B06A] backdrop-blur-md bg-black/30 px-4 py-2 rounded-[12px] text-sm md:text-base font-bold hover:bg-[#D4B06A] hover:text-black transition duration-300 text-center w-[160px]"
-  >
-    📞 0930-804-172
-  </a>
+      <a
+        href="#contact"
+        className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+      >
+        聯絡我們
+      </a>
 
-</div>
-        </div>
-      </nav>
+    </div>
+
+    {/* 右側電話 + 手機漢堡 */}
+    <div className="flex items-center gap-4">
+
+      {/* 手機版 ☰ */}
+      <button
+        onClick={() => {
+          const menu = document.getElementById("mobile-menu")
+          menu?.classList.toggle("hidden")
+        }}
+        className="md:hidden text-3xl"
+      >
+        ☰
+      </button>
+
+      {/* 電話按鈕 */}
+      <div className="flex flex-col gap-2">
+
+        <a
+          href="tel:0968305061"
+          className="border border-[#D4B06A] text-[#D4B06A] backdrop-blur-md bg-black/30 px-4 py-2 rounded-[12px] text-sm md:text-base font-semibold transition duration-300 hover:bg-[#D4B06A] hover:text-black"
+        >
+          📞 0968-305-061
+        </a>
+
+        <a
+          href="tel:0930804172"
+          className="border border-[#D4B06A] text-[#D4B06A] backdrop-blur-md bg-black/30 px-4 py-2 rounded-[12px] text-sm md:text-base font-semibold transition duration-300 hover:bg-[#D4B06A] hover:text-black"
+        >
+          📞 0930-804-172
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>
+
 {/* 手機版選單 */}
 <div
   id="mobile-menu"
-  className="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10"
+  className="hidden md:hidden fixed top-[110px] left-0 w-full z-40 bg-black/95 backdrop-blur-xl border-b border-white/10"
 >
+
   <div className="flex flex-col px-6 py-6 gap-5 text-lg font-medium">
 
-    <a href="#about" className="hover:text-[#D4B06A]">
+    <a
+      href="#about"
+      className="hover:text-[#D4B06A]"
+    >
       關於我們
     </a>
 
-    <a href="#services" className="hover:text-[#D4B06A]">
+    <a
+      href="#services"
+      className="hover:text-[#D4B06A]"
+    >
       服務項目
     </a>
 
-    <a href="#cases" className="hover:text-[#D4B06A]">
+    <a
+      href="#cases"
+      className="hover:text-[#D4B06A]"
+    >
       施工案例
     </a>
 
-    <a href="#contact" className="hover:text-[#D4B06A]">
+    <a
+      href="#contact"
+      className="hover:text-[#D4B06A]"
+    >
       聯絡我們
     </a>
 
   </div>
+
 </div>
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center pt-32 md:pt-0">
+      <section id="top" className="relative h-screen flex items-center justify-center pt-32 md:pt-0">
 
         <div className="absolute inset-0">
           <Image
@@ -220,7 +248,7 @@ export default function Home() {
       {/* ABOUT */}
       <section
   id="about"
-  className="py-28 bg-[#111111]"
+  className="scroll-mt-32"
 >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
@@ -257,7 +285,7 @@ export default function Home() {
       {/* SERVICES */}
       <section
   id="services"
-  className="py-28 bg-black"
+  className="scroll-mt-32"
 >
 
         <div className="max-w-7xl mx-auto px-6">
