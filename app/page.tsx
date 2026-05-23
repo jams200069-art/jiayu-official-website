@@ -250,46 +250,7 @@ export default function Home() {
       </section>
 
       {/* CASES */}
-      <section
-        id="cases"
-        className="py-28 bg-black"
-      >
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <p className="text-[#D4B06A] tracking-[4px] mb-4">
-            PROJECTS
-          </p>
-
-          <h2 className="text-5xl font-bold mb-16">
-            施工案例
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-
-            {[
-              "/case1.jpg",
-              "/case2.jpg",
-              "/case3.jpg",
-              "/case4.jpg",
-            ].map((img, index) => (
-              <div
-                key={index}
-                className="relative h-[350px] rounded-[30px] overflow-hidden group"
-              >
-                <Image
-                  src={img}
-                  alt="case"
-                  fill
-                  className="object-cover group-hover:scale-110 duration-700"
-                />
-
-                <div className="absolute inset-0 bg-black/30"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* PRICE */}
       <section className="py-28 bg-[#111111]">
