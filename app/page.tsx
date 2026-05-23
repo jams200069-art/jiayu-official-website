@@ -163,7 +163,7 @@ export default function Home() {
 
           <div className="relative h-[500px] rounded-[40px] overflow-hidden border border-[#D4B06A]/20">
             <Image
-              src="/work1.jpg"
+              src="/images/villa.jpg"
               alt="work"
               fill
               className="object-cover"
