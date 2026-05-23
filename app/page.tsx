@@ -73,19 +73,19 @@ export default function Home() {
           </div>
 <div className="flex gap-3 text-xs">
 
-  <a href="#about" className="transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+  <a href="#about" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
     關於我們
   </a>
 
-  <a href="#services" className="transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+  <a href="#services" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
     服務項目
   </a>
 
-  <a href="#cases" className="transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+  <a href="#cases" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
     施工案例
   </a>
 
-  <a href="#contact" className="transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+  <a href="#contact" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
     聯絡我們
   </a>
 
