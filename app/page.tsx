@@ -71,7 +71,7 @@ export default function Home() {
               專業防水・隔熱工程
             </p>
           </div>
-<div className="hidden md:flex gap-8 text-sm">
+<div className="flex gap-3 text-xs">
 
   <a href="#about" className="hover:text-[#D4B06A]">
     關於我們
