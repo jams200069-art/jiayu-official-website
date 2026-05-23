@@ -56,16 +56,21 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-[#0B0B0B] text-white overflow-hidden">
+    <main
+  id="top"
+  className="bg-[#0B0B0B] text-white overflow-hidden"
+>
 
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
           <div>
-            <h1 className="text-2xl font-bold tracking-widest">
-              佳禹實業有限公司
-            </h1>
+            <a href="#top">
+  <h1 className="text-2xl font-bold tracking-widest cursor-pointer hover:text-[#D4B06A] transition duration-300">
+    佳禹實業有限公司
+  </h1>
+</a>
 
             <p className="text-sm text-gray-400 mt-1">
               專業防水・隔熱工程
