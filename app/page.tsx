@@ -123,9 +123,9 @@ export default function Home() {
           </p>
 
           <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
-            日系精品工程美學
+            防水隔熱專業施工
             <br />
-            高端防水隔熱施工
+            細緻工法長效防護
           </h1>
 
           <p className="text-xl text-gray-300 leading-relaxed mb-10">
@@ -216,17 +216,17 @@ export default function Home() {
 
     {
       title: "外牆防水",
-      desc: "專業外牆防水施工，有效阻隔雨水滲透與壁癌問題。"
+      desc: "專業外牆裂縫防水施工，有效阻隔雨水滲透與室內壁癌問題。"
     },
 
     {
       title: "浴室漏水",
-      desc: "免敲磚處理浴室滲漏問題，快速施工、不影響日常生活。"
+      desc: "免敲磚處理浴室滲漏問題，正常情況下施工完畢後48小時可以正常使用浴室。"
     },
 
     {
       title: "隔熱工程",
-      desc: "降低室內溫度與西曬熱能，提高居住舒適度。"
+      desc: "大幅降低室內溫度與日曬熱能，提高居住舒適度，大樓或透天甚至是屋頂鐵皮皆有明顯效果。"
     }
 
   ].map((item, index) => (
