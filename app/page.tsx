@@ -551,7 +551,7 @@ export default function Home() {
       <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
 
         <a
-          href="https://facebook.com"
+          href="https://facebook.com/share/1cMmG1FaAL/?mibextid=wwXIfr"
           target="_blank"
           className="px-5 py-3 md:px-8 md:py-4 rounded-full bg-[#1877F2]/70 backdrop-blur-md text-white text-sm md:text-lg font-bold shadow-2xl"
         >
@@ -559,7 +559,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://line.me"
+          href="https://line.me/ti/p/@637zdsjd"
           target="_blank"
           className="px-5 py-3 md:px-8 md:py-4 rounded-full bg-[#06C755]/70 backdrop-blur-md text-white text-sm md:text-lg font-bold shadow-2xl"
         >
