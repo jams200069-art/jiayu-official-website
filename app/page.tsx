@@ -462,18 +462,38 @@ export default function Home() {
 
           <div className="space-y-6">
 
-            {[
-              "防水工程可以維持多久？",
-              "施工需要多久時間？",
-              "是否提供保固？",
-            ].map((faq, index) => (
+            [
+  {
+    q: "防水工程可以維持多久？",
+    a: "依施工位置與材料不同，一般可維持 5～10 年以上。"
+  },
+
+  {
+    q: "施工需要多久時間？",
+    a: "依坪數與工程內容不同，通常約 1～3 天完成。"
+  },
+
+  {
+    q: "是否提供保固？",
+    a: "我們提供完整施工保固，詳細年限依工程內容及現場勘查後說明。施工完成後會附上保固卡，在保固期內有任何非人為因素導致損壞請立即連繫本公司。"
+  }
+  
+  {
+    q: "哪些地區在服務範圍內？",
+    a: "目前主要服務範圍為屏東高雄及台南。若有其他地區需要服務可透過LINE進行詢問，我們會盡力協助安排。"
+  }
+].map((faq, index) => (
               <div
                 key={index}
                 className="border border-white/10 rounded-[25px] p-8"
               >
-                <h3 className="text-xl font-bold">
-                  {faq}
-                </h3>
+                <h3 className="text-xl font-bold mb-4">
+  {faq.q}
+</h3>
+
+<p className="text-gray-400 leading-loose">
+  {faq.a}
+</p>
               </div>
             ))}
           </div>
