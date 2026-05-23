@@ -95,15 +95,23 @@ export default function Home() {
   </a>
 
 </div>
-          <div className="text-right">
-            <p className="text-2xl font-bold text-[#D4B06A]">
-              0968-305-061
-            </p>
+          <div className="flex flex-col items-end gap-2">
 
-            <p className="text-sm text-gray-400">
-              免費諮詢專線
-            </p>
-          </div>
+  <a
+    href="tel:0968305061"
+    className="bg-gradient-to-r from-[#D4B06A] to-[#E6C98A] text-black px-4 py-2 rounded-full text-sm md:text-base font-bold hover:scale-105 transition duration-300"
+  >
+    📞 0968-305-061
+  </a>
+
+  <a
+    href="tel:0930804172"
+    className="bg-gradient-to-r from-[#D4B06A] to-[#E6C98A] text-black px-4 py-2 rounded-full text-sm md:text-base font-bold hover:scale-105 transition duration-300"
+  >
+    📞 0930-804-172
+  </a>
+
+</div>
         </div>
       </nav>
 
