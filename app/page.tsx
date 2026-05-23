@@ -187,36 +187,47 @@ export default function Home() {
 
           <div className="grid md:grid-cols-4 gap-8">
 
-            [
-  {
-    title: "屋頂防水",
-    desc: "採用高彈性防水材料，防止屋頂龜裂滲水，延長建築壽命。"
-  },
+  {[
+    {
+      title: "屋頂防水",
+      desc: "採用高彈性防水材料，防止屋頂龜裂滲水，延長建築壽命。"
+    },
 
-  {
-    title: "外牆防水",
-    desc: "專業外牆防水施工，有效阻隔雨水滲透與壁癌問題。"
-  },
+    {
+      title: "外牆防水",
+      desc: "專業外牆防水施工，有效阻隔雨水滲透與壁癌問題。"
+    },
 
-  {
-    title: "浴室漏水",
-    desc: "免敲磚處理浴室滲漏問題，快速施工、不影響日常生活。"
-  }
-].map((item, index) => (
-              <div
-                key={index}
-                className="bg-[#111111] border border-white/10 rounded-[30px] p-10 hover:border-[#D4B06A] duration-300"
-              >
-                <h3 className="text-2xl font-bold mb-5">
-                  {item}
-                </h3>
+    {
+      title: "浴室漏水",
+      desc: "免敲磚處理浴室滲漏問題，快速施工、不影響日常生活。"
+    },
 
-                <p className="text-gray-400 leading-loose">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+    {
+      title: "隔熱工程",
+      desc: "降低室內溫度與西曬熱能，提高居住舒適度。"
+    }
+
+  ].map((item, index) => (
+
+    <div
+      key={index}
+      className="bg-[#111111] border border-white/10 rounded-[30px] p-10 hover:border-[#D4B06A]/40 duration-500"
+    >
+
+      <h3 className="text-2xl font-bold mb-5">
+        {item.title}
+      </h3>
+
+      <p className="text-gray-400 leading-loose">
+        {item.desc}
+      </p>
+
+    </div>
+
+  ))}
+
+</div>
         </div>
       </section>
 
