@@ -68,7 +68,7 @@ export default function Home() {
           <div>
             <a href="#top">
   <h1 className="text-2xl font-bold tracking-widest cursor-pointer hover:text-[#D4B06A] transition duration-300">
-    佳禹實業有限公司
+    佳禹
   </h1>
 </a>
 
@@ -76,24 +76,48 @@ export default function Home() {
               專業防水・隔熱工程
             </p>
           </div>
-<div className="flex gap-3 text-xs">
-
-  <a href="#about" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+{/* 電腦版導覽列 */}
+<div className="hidden md:flex gap-8 text-sm font-medium">
+  <a
+    href="#about"
+    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+  >
     關於我們
   </a>
 
-  <a href="#services" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+  <a
+    href="#services"
+    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+  >
     服務項目
   </a>
 
-  <a href="#cases" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+  <a
+    href="#cases"
+    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+  >
     施工案例
   </a>
 
-  <a href="#contact" className="text-gray-300 transition duration-300 hover:text-[#D4B06A] hover:scale-110 hover:-translate-y-1">
+  <a
+    href="#contact"
+    className="transition duration-300 hover:text-[#D4B06A] hover:scale-110"
+  >
     聯絡我們
   </a>
+</div>
 
+{/* 手機版漢堡選單 */}
+<div className="md:hidden">
+  <button
+    onClick={() => {
+      const menu = document.getElementById("mobile-menu")
+      menu?.classList.toggle("hidden")
+    }}
+    className="text-3xl"
+  >
+    ☰
+  </button>
 </div>
           <div className="flex flex-col items-end gap-2">
 
@@ -114,7 +138,31 @@ export default function Home() {
 </div>
         </div>
       </nav>
+{/* 手機版選單 */}
+<div
+  id="mobile-menu"
+  className="hidden md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10"
+>
+  <div className="flex flex-col px-6 py-6 gap-5 text-lg font-medium">
 
+    <a href="#about" className="hover:text-[#D4B06A]">
+      關於我們
+    </a>
+
+    <a href="#services" className="hover:text-[#D4B06A]">
+      服務項目
+    </a>
+
+    <a href="#cases" className="hover:text-[#D4B06A]">
+      施工案例
+    </a>
+
+    <a href="#contact" className="hover:text-[#D4B06A]">
+      聯絡我們
+    </a>
+
+  </div>
+</div>
       {/* HERO */}
       <section className="relative h-screen flex items-center justify-center pt-32 md:pt-0">
 
@@ -227,7 +275,7 @@ export default function Home() {
   {[
     {
       title: "屋頂防水",
-      desc: "採用高彈性防水材料配合玻璃纖維毯（FRP）具有超強抗拉強度、耐候性極佳、防腐抗裂、抗植物根系穿透四大核心優勢。它能與防水塗料緊密結合，形成一體化的高強度屏障，是現代屋頂、地下室、水池等工程的理想防水材料，防止龜裂滲水，延長建築壽命。"
+      desc: "採用玻璃纖維毯切骨氈施作，具有超強抗拉強度、耐候性極佳、防腐抗裂、抗植物根系穿透四大核心優勢。它能與防水塗料緊密結合，形成一體化的高強度屏障，是現代屋頂、地下室、水池等工程的理想防水材料，防止龜裂滲水，延長建築壽命。"
     },
 
     {
