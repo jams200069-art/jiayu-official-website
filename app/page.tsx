@@ -244,13 +244,12 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center gap-5">
 <a
-  href="https://line.me/R/msg/text/?姓名：%0A地區：%0A聯絡電話：%0A需求項目：屋頂防水%20/%20外牆防水%20/%20浴室漏水%20/%20隔熱工程%0A問題描述：%0A方便聯絡時間："
+  href="https://line.me/ti/p/~ruoruo075"
   target="_blank"
   className="px-10 py-4 rounded-full bg-[#D4B06A] text-black font-bold hover:scale-105 duration-300"
 >
   免費詢價
 </a>
-  
             <a
               href="#cases"
               className="px-10 py-4 rounded-full border border-white/20 hover:bg-white/10 duration-300"
