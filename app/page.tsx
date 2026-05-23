@@ -187,12 +187,22 @@ export default function Home() {
 
           <div className="grid md:grid-cols-4 gap-8">
 
-            {[
-              "屋頂防水",
-              "外牆防水",
-              "浴室漏水",
-              "隔熱工程",
-            ].map((item, index) => (
+            [
+  {
+    title: "屋頂防水",
+    desc: "採用高彈性防水材料，防止屋頂龜裂滲水，延長建築壽命。"
+  },
+
+  {
+    title: "外牆防水",
+    desc: "專業外牆防水施工，有效阻隔雨水滲透與壁癌問題。"
+  },
+
+  {
+    title: "浴室漏水",
+    desc: "免敲磚處理浴室滲漏問題，快速施工、不影響日常生活。"
+  }
+].map((item, index) => (
               <div
                 key={index}
                 className="bg-[#111111] border border-white/10 rounded-[30px] p-10 hover:border-[#D4B06A] duration-300"
@@ -202,8 +212,7 @@ export default function Home() {
                 </h3>
 
                 <p className="text-gray-400 leading-loose">
-                  高品質材料搭配專業工法，
-                  提供長效耐用施工品質。
+                  {item.desc}
                 </p>
               </div>
             ))}
