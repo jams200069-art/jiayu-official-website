@@ -99,14 +99,14 @@ export default function Home() {
 
   <a
     href="tel:0968305061"
-    className="bg-gradient-to-r from-[#D4B06A] to-[#E6C98A] text-black px-4 py-2 rounded-full text-sm md:text-base font-bold hover:scale-105 transition duration-300"
+    className="border border-[#D4B06A] text-[#D4B06A] backdrop-blur-md bg-black/30 px-4 py-2 rounded-[12px] text-sm md:text-base font-bold hover:bg-[#D4B06A] hover:text-black transition duration-300 text-center w-[160px]"
   >
     📞 0968-305-061
   </a>
 
   <a
     href="tel:0930804172"
-    className="bg-gradient-to-r from-[#D4B06A] to-[#E6C98A] text-black px-4 py-2 rounded-full text-sm md:text-base font-bold hover:scale-105 transition duration-300"
+    className="border border-[#D4B06A] text-[#D4B06A] backdrop-blur-md bg-black/30 px-4 py-2 rounded-[12px] text-sm md:text-base font-bold hover:bg-[#D4B06A] hover:text-black transition duration-300 text-center w-[160px]"
   >
     📞 0930-804-172
   </a>
@@ -116,7 +116,7 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative h-screen flex items-center justify-center pt-32 md:pt-0">
 
         <div className="absolute inset-0">
           <Image
