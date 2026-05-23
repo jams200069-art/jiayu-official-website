@@ -89,7 +89,7 @@ export default function Home() {
 
         <div className="absolute inset-0">
           <Image
-            src="/villa.jpg"
+            src="/images/villa.jpg"
             alt="villa"
             fill
             className="object-cover brightness-[0.35]"
@@ -409,7 +409,63 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/*施工案例*/}
+<section className="py-28 bg-[#0a0a0a]">
+  <div className="max-w-7xl mx-auto px-6">
 
+    <p className="text-[#D4B06A] tracking-[4px] mb-4">
+      PROJECTS
+    </p>
+
+    <h2 className="text-4xl md:text-5xl font-black mb-16">
+      施工案例
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-8">
+
+      <div className="overflow-hidden rounded-[30px]">
+        <Image
+          src="/images/roof1.jpg"
+          alt="roof1"
+          width={800}
+          height={600}
+          className="w-full h-[320px] object-cover hover:scale-105 duration-500"
+        />
+      </div>
+
+      <div className="overflow-hidden rounded-[30px]">
+        <Image
+          src="/images/roof2.jpg"
+          alt="roof2"
+          width={800}
+          height={600}
+          className="w-full h-[320px] object-cover hover:scale-105 duration-500"
+        />
+      </div>
+
+      <div className="overflow-hidden rounded-[30px]">
+        <Image
+          src="/images/roof3.jpg"
+          alt="roof3"
+          width={800}
+          height={600}
+          className="w-full h-[320px] object-cover hover:scale-105 duration-500"
+        />
+      </div>
+
+      <div className="overflow-hidden rounded-[30px]">
+        <Image
+          src="/images/roof4.jpg"
+          alt="roof4"
+          width={800}
+          height={600}
+          className="w-full h-[320px] object-cover hover:scale-105 duration-500"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* FAQ */}
       <section className="py-28 bg-[#111111]">
 
